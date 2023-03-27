@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Register and Create a Squad to Challenge Friends!</h1>
+<h5>Think you can create the best squad? Register now!</h5>
+<div class="container">
+    <div class="row justify-content-center">
+        <form method="POST" class="col-4">
+            <div>
+            {{ form.hidden_tag() }}
+        </div>
+        <div class="username2">
+            {{ form.username(class='form-control', placeholder='Username') }}
+        </div>
+        <div class="email">
+            {{ form.email(class='form-control', placeholder='Email') }}
+        </div>
+        <div class="password2">
+            {{ form.password(class='form-control', placeholder='Password') }}
+        </div>
+        <div class="confirm-password">
+            {{ form.confirm_password(class='form-control', placeholder='Confirm Password') }}
+        </div>
+        <div class ="submit2">
+            {{ form.submit(class='btn btn-primary', placeholder='Submit') }}
+        </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

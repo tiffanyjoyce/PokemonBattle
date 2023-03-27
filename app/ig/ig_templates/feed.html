@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Welcome to your feed!</h1>
+
+    {% for p in posts %}
+        <div class="card" style="width: 18rem;">
+          <!-- href="/posts/{{p.id}} -->
+          <a href="{{ url_for('ig.indPost', post_id=p.id) }}" ><img src="{{ p.img_url }}" class="card-img-top" alt="{{ p.title }}"></a>
+            <div class="card-body">
+              <h5 class="card-title">{{ p.title }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ p.author.username }}</h6>
+              <p class="card-text">{{ p.body }}</p>
+              
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    {% endfor %}
+
+
+{% endblock %}

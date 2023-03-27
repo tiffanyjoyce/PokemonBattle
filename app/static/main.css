@@ -1,0 +1,44 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+}
+.login-form{
+    padding: 100px;
+    min-width: 400px;
+}
+.username {
+    padding-bottom: 50px;
+    min-width: 300px;
+
+}
+.password {
+    min-width: 300px;
+    padding-bottom: 50px;
+
+}
+.submit{
+    min-width: 300px;
+    width: 300px;
+}
+h1{
+    margin-top:25px;
+    text-align: center;
+    color: rgb(255, 196, 0);
+}
+h5{
+    margin-top: 20px;
+    text-align: center;
+    font-size: medium;
+}
+.username2{
+    padding-top:50px;
+    padding-bottom: 25px;
+}
+.email{
+    padding-bottom: 25px;
+}
+.password2{
+    padding-bottom: 25px;
+}
+.confirm-password{
+    padding-bottom: 25px;
+}
