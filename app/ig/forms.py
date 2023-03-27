@@ -14,6 +14,8 @@ class UpdatePostForm(FlaskForm):
     body = StringField('Body')
     submit = SubmitField()
 
+class SearchPokemonForm(FlaskForm):
+    name= StringField('Name', validators = [DataRequired()])
 
 
 

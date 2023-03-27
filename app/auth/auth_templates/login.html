@@ -11,13 +11,13 @@
             {{ form.hidden_tag() }}
         </div>
         <div class = 'username'>
-            {{ form.username(class='form-control', placeholder='Username') }}
+            {{ form.username(class='username-form form-control', placeholder='Username') }}
         </div>
         <div class="password">
-            {{ form.password(class='form-control', placeholder='Password') }}
+            {{ form.password(class='password-form form-control', placeholder='Password') }}
         </div>
         <div class ="submit">
-            {{ form.submit(class='btn btn-primary') }}
+            {{ form.submit(class='submit-button btn btn-primary', value='Login') }}
         </div>
         </form>
 

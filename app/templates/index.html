@@ -4,9 +4,12 @@
 {% block content %}
 
   <h1>Ready to battle?</h1>
-  <div class="container">
-    <button type="button" class="btn btn-primary" href="{{ url_for('auth.registerPage') }}">Sign in</button>
-    <button type="button" class="btn btn-primary">Join us!</button>
+  <h5>Capture Pokemon, create a team, and attack others. May the best team win!</h5>
+  <div class="button-container">
+    <p class="text-center">Join the fun!</p>
+    <button type="button" class="register-button btn btn-primary">Register</button>
+    <p class = "text-center">Already have an account?</p>
+    <button type="button" class="signin-button btn btn-primary" href="{{ url_for('auth.registerPage') }}">Sign in</button>
 
   </div>
 
