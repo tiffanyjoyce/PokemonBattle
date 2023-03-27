@@ -55,5 +55,7 @@ class Post(db.Model):
         db.session.delete(self)
         db.session.commit()
     
-    
+# class Pokemon(db.Model):
+#     name = db.Column(db.String, primary_key=True)
+#     ability= db.Column(db.String)
 

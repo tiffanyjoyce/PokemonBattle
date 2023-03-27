@@ -3,8 +3,8 @@
 {% block content %}
 
 
-<h1>Register and Create a Squad to Challenge Friends!</h1>
-<h5>Think you can create the best squad? Register now!</h5>
+<h1>Register and Create a Team to Challenge Friends!</h1>
+<h5>Think you can create the best team? Register now!</h5>
 <div class="container">
     <div class="row justify-content-center">
         <form method="POST" class="col-4">
@@ -12,19 +12,19 @@
             {{ form.hidden_tag() }}
         </div>
         <div class="username2">
-            {{ form.username(class='form-control', placeholder='Username') }}
+            {{ form.username(class='username2-form form-control', placeholder='Username') }}
         </div>
         <div class="email">
-            {{ form.email(class='form-control', placeholder='Email') }}
+            {{ form.email(class='email-form form-control', placeholder='Email') }}
         </div>
         <div class="password2">
-            {{ form.password(class='form-control', placeholder='Password') }}
+            {{ form.password(class='password2-form form-control', placeholder='Password') }}
         </div>
         <div class="confirm-password">
-            {{ form.confirm_password(class='form-control', placeholder='Confirm Password') }}
+            {{ form.confirm_password(class='confirm-password-form form-control', placeholder='Confirm Password') }}
         </div>
         <div class ="submit2">
-            {{ form.submit(class='btn btn-primary', placeholder='Submit') }}
+            {{ form.submit(class='submit2-button btn btn-primary', value='Continue') }}
         </div>
         </form>
 
