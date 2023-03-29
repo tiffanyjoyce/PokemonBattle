@@ -19,7 +19,7 @@
               Dropdown
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('pokemon.searchpokemon') }}">Search</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -29,16 +29,10 @@
           </li>
           {% if current_user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('auth.logOut') }}">Logout!</a>
+            <a class="nav-link">Welcome, {{current_user.username.upper()}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">{{current_user.username}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('ig.createPost') }}">Create Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('ig.feed') }}">My feed</a>
+            <a class="nav-link" aria-current="page" href="{{ url_for('auth.logOut') }}">Logout</a>
           </li>
           {% endif %}
         </ul>

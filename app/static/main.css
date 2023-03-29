@@ -82,3 +82,49 @@ h5{
 .signin-button{
     width: 400px;
 }
+.pokemon-display-card{
+    margin: 0 auto;
+    /* Create a border */
+    /* border-radius: 0.5 rem;
+    border: 0.5rem solid rgb(19, 109, 255) !important; */
+/* Paint an image in the border */
+    /* border-image: conic-gradient(
+        from var(--angle),
+        #d53e33 0deg 90deg,
+        #fbb300 90deg 180deg,
+        #377af5 180deg 270deg,
+        #399953 270deg 360deg
+        ) 1!important; */
+}
+/* .pokename-form {
+    width: 400px;
+    margin: 0 auto;
+} */
+.search-card-text{
+    font-size: small;
+}
+.search-card-title{
+    font-size: large;
+}
+.search-card{
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.pokename-form{
+    margin-bottom: 20px;
+}
+.poke-submit{
+    margin: 0 auto;
+    width: 400px;
+}
+.homepage-text{
+    font-size: small;
+}
+.search-button{
+    margin-top: 25px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 400px;
+}

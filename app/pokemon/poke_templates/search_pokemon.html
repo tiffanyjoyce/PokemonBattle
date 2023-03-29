@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="search-card" style="width: 32rem;">
+    <div class="card-body">
+      <h5 class="search-card-title">Search for a Pokemon</h5>
+      <p class="search-card-text text-center">Search through Pokemon catalog to view stats or capture them.</p>
+      <form class="search-form" method = 'POST'>
+        {{ form.hidden_tag() }}
+    
+        {{ form.name(class='pokename-form form-control', placeholder='Enter Pokemon Name...') }}
+        {{ form.submit(class='poke-submit btn btn-primary', value = 'Search') }}
+        </form>
+    </div>
+  </div>
+<!-- <div class = 'name'> 
+    <form class="search-form" method = 'POST'>
+    {{ form.hidden_tag() }}
+
+    {{ form.name(class='pokename-form form-control', placeholder='Enter Pokemon Name...') }}
+    {{ form.submit(class='poke-submit btn btn-primary') }}
+    </form>
+</div> -->
+
+
+{% endblock %}

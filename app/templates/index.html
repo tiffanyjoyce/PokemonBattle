@@ -5,12 +5,28 @@
 
   <h1>Ready to battle?</h1>
   <h5>Capture Pokemon, create a team, and attack others. May the best team win!</h5>
+  <img src="{{ url_for('static', filename='pokemon-battle.jpeg')}}" alt="logo" width = "100%">
   <div class="button-container">
     <p class="text-center">Join the fun!</p>
     <button type="button" class="register-button btn btn-primary">Register</button>
     <p class = "text-center">Already have an account?</p>
     <button type="button" class="signin-button btn btn-primary" href="{{ url_for('auth.registerPage') }}">Sign in</button>
-
   </div>
+  {% if current_user.is_authenticated %}
+  <div>
+    <p class="homepage-text">Search for a Pokemon to add to your team</p>
+    <button class="search-button btn btn-primary">Search</button>
+  </div>
+  {% endif %}
+  <!-- how to add a video -->
+  <!-- <video
+        loop
+        muted
+        autoplay
+        preload="auto"
+        style="width: 100%; height: auto; z-index: -1;">
+            <source src="{{ url_for('static',filename = 'video.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+  </video> -->
 
 {% endblock %}
