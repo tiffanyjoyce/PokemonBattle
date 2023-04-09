@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="pokemon-display-card text-center" style="width: 18rem; border: 10px;">
+<div class="pokemon-display-card card text-center" style="width: 20rem; border: 10px;">
     <img src="{{p['Front Shiny']}}" class="card-img-top" alt="...">
     <div class="card-body">
         <h2 class="card-title">{{p['Name'].title()}}!</h2>
-        <p class="card-text">Ability : {{p['Ability'].title()}} </p>
     </div>
     <ul class="list-group list-group-flush">
+        <li class="list-group-item">Ability : {{p['Ability'].title()}} </li>
         <li class="list-group-item">Base HP : {{p['Base HP']}}</li>
         <li class="list-group-item">Base Attack : {{p['Base ATK']}}</li>
         <li class="list-group-item">Base Defense : {{p['Base DEF']}}</li>
     </ul>
-
-    </div>
+    <a class="catch-button btn btn-danger" href="{{ url_for('pokemon.catch',name=p['Name']) }}">Catch</a>
+    <a class="release-button btn btn-danger" href="{{ url_for('pokemon.releaseFunc',name=p['Name']) }}">Release</a>
+</div>
 </div>
 
 {% endblock %}

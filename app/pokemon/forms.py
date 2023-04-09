@@ -18,5 +18,10 @@ class SearchPokemonForm(FlaskForm):
     name= StringField('Name', validators = [DataRequired()])
     submit = SubmitField()
 
+class SearchUsersForm(FlaskForm):
+    username = StringField('Name', validators= [DataRequired()])
+    submit=SubmitField()
+
+
 
 

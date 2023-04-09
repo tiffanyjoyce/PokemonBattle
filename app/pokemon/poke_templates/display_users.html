@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if current_user == user%}
+<div class="view-user card text-center mb-3" style="max-width: 18rem;">
+    <div class="card-header text-danger">You!</div>
+    <div class="card-body">
+            <li class="wins-losses list-group-item">Wins: {{user.wins}}</li>
+            <li class="wins-losses list-group-item">Losses: {{user.losses}}</li>
+        <a class="team-button btn btn-warning"href="{{url_for('pokemon.viewTeam', user_id=user.id)}}">View team</a>
+  </div>
+</div>
+{%else%}
+<div class="view-user card text-center mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{user.username.title()}}</div>
+    <div class="card-body">
+            <li class="wins-losses list-group-item">Wins: {{user.wins}}</li>
+            <li class="wins-losses list-group-item">Losses: {{user.losses}}</li>
+        <a class="team-button btn btn-warning"href="{{url_for('pokemon.viewTeam', user_id=user.id)}}">View team</a>
+        <a class= "attack-button btn btn-danger"href="{{url_for('pokemon.battle', user_id=user.id)}}">Attack!</a>
+  </div>
+</div>
+{%endif%}
+{% endblock %}

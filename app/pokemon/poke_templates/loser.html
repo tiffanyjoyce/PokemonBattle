@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="no-team card bg-danger text-white" style="width: 22rem;">
+    <img src="{{url_for('static', filename='sad-pikachu.jpeg')}}"
+        class="card-img-top" alt="empty ball">
+    <div class="card-body">
+        <h5 class="card-title">Booooo, go home</h5>
+    </div>
+</div>
+{%endblock%}

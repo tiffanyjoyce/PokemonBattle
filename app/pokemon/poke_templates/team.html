@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    {%for t in team%}
+    <div class="row-sm-2 mb-2">
+        <div class="pokemon-display-card card text-center" style="width: 18rem; border: 10px;">
+            <img src="{{t.front_shiny}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">{{t.name.title()}}!</h2>
+                <p class="card-text">Ability : {{t.ability.title()}} </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Base HP : {{t.base_hp}}</li>
+                <li class="list-group-item">Base Attack : {{t.base_atk}}</li>
+                <li class="list-group-item">Base Defense : {{t.base_def}}</li>
+            </ul>
+            <a class="release-button btn btn-danger" href="{{ url_for('pokemon.releaseFunc',name=t.name) }}">Release</a>
+
+        </div>
+    </div>
+</div>
+{%endfor%}
+
+{% endblock %}

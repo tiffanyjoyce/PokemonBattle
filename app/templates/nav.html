@@ -7,27 +7,29 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {%if not current_user.is_authenticated%}
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{{ url_for('auth.registerPage') }}">Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('auth.loginPage') }}">Login</a>
           </li>
+          {%endif%}
           <li class="nav-item dropdown">
+            {% if current_user.is_authenticated %}
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Dropdown
+              Options
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="{{ url_for('pokemon.searchpokemon') }}">Search</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('pokemon.searchpokemon') }}">Search Pokemon</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('pokemon.users')}}">Search Users</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="{{url_for('pokemon.team')}}">My team</a></li>
             </ul>
           </li>
-          {% if current_user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link">Welcome, {{current_user.username.upper()}}</a>
           </li>

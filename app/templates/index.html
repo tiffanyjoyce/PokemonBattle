@@ -2,22 +2,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-  <h1>Ready to battle?</h1>
-  <h5>Capture Pokemon, create a team, and attack others. May the best team win!</h5>
-  <img src="{{ url_for('static', filename='pokemon-battle.jpeg')}}" alt="logo" width = "100%">
-  <div class="button-container">
-    <p class="text-center">Join the fun!</p>
-    <button type="button" class="register-button btn btn-primary">Register</button>
-    <p class = "text-center">Already have an account?</p>
-    <button type="button" class="signin-button btn btn-primary" href="{{ url_for('auth.registerPage') }}">Sign in</button>
+  <img src="{{ url_for('static', filename='pokemon-battle.jpeg')}}" alt="logo" width = "100%"> 
+    <h1 class = "homepage-header">Ready to Battle?</h1>
+    <h5 class="homepage-text">Capture Pokemon, create a team, and attack others. May the best team win!</h5>
+    <hr class="first-line">
+    <h2 class="poke-heading">Choose from hundred of Pokemon</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-1">
+      <div class="col">
+        <div class="home-cards card">
+          <img src="{{url_for('static', filename='squirtle.png')}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Squirtle</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="home-cards card">
+          <img src="{{url_for('static', filename='rattata.png')}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Rattata</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="home-cards card">
+          <img src="{{url_for('static', filename='charmander.png')}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Charmander</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="home-cards card">
+          <img src="{{url_for('static', filename='mew.webp')}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Mew</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search-container">
+    <a class="poke-search btn btn-warning" href="{{url_for('pokemon.searchpokemon')}}">Search</a>
+ {%if not current_user.is_authenticated%}
   </div>
-  {% if current_user.is_authenticated %}
-  <div>
-    <p class="homepage-text">Search for a Pokemon to add to your team</p>
-    <button class="search-button btn btn-primary">Search</button>
+    <div class="button-container">
+    <p class="join-header text-center">Join the fun!</p>
+    <a class="register-button btn btn-primary" href="{{ url_for('auth.registerPage') }}">Register</a>
+    <p class ="acct-header text-center">Already have an account?</p>
+    <a class="signin-button btn btn-primary" href="{{ url_for('auth.loginPage') }}">Sign in</a>
   </div>
-  {% endif %}
+  {%endif%}
   <!-- how to add a video -->
   <!-- <video
         loop

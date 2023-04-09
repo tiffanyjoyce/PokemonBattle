@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="search-card" style="width: 32rem;">
+    <div class="card-body">
+      <h5 class="search-card-title">Search for a User</h5>
+      <p class="search-card-text text-center">Search through users to view their team and attack!</p>
+      <form class="search-form" method = 'POST'>
+        {{ form.hidden_tag() }}
+    
+        {{ form.username(class='user-form form-control', placeholder='Enter username...') }}
+        {{ form.submit(class='user-submit btn btn-primary', value = 'Search') }}
+        </form>
+        <a class="all-button btn btn-warning" href="{{url_for('pokemon.allUsers')}}">View all Users</a>
+    </div>
+  </div>
+  {% endblock %}

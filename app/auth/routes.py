@@ -26,7 +26,7 @@ def loginPage():
             if user:
                 if check_password_hash(user.password, password):  # <--NEW
                 #user.password == password:  --OLD way
-                    flash('YAY, you\'re logged in!', 'success')
+                    flash('Successfully logged in!', 'success')
                     login_user(user)
                     
                     return redirect(url_for('homePage'))
@@ -51,7 +51,7 @@ def registerPage():
                 flash('That username already exists, please try another!', 'warning')
                 return redirect(url_for('auth.registerPage'))
             if User.query.filter_by(email=email).first():
-                flash('that email has been used previously, try again', 'warning')
+                flash('That email has already been used. Try logging in', 'warning')
                 return redirect(url_for('auth.registerPage'))
 
             user = User(username, email, password)            
@@ -64,4 +64,6 @@ def registerPage():
 @auth.route('/logout')
 def logOut():
     logout_user()
+    flash('Successfully logged out', 'success')
     return redirect(url_for('homePage'))
+
